@@ -86,7 +86,7 @@ class CategoryAdminTest extends WebTestCase
         $this->loadFixtures(array('Stfalcon\Bundle\PortfolioBundle\DataFixtures\ORM\LoadCategoryData'));
         $client = $this->makeClient(true);
 
-        $em = $this->getContainer()->get('doctrine')->getEntityManager();
+        $em = $this->getContainer()->get('doctrine')->getManager();
         $category = $em->getRepository("StfalconPortfolioBundle:Category")->findOneBy(array('slug' => 'web-development'));
         $crawler = $client->request('GET', $this->getUrl('admin_bundle_portfolio_category_edit', array('id' => $category->getId())));
 
@@ -119,7 +119,7 @@ class CategoryAdminTest extends WebTestCase
         $this->loadFixtures(array('Stfalcon\Bundle\PortfolioBundle\DataFixtures\ORM\LoadCategoryData'));
         $client = $this->makeClient(true);
 
-        $em = $this->getContainer()->get('doctrine')->getEntityManager();
+        $em = $this->getContainer()->get('doctrine')->getManager();
         $category = $em->getRepository("StfalconPortfolioBundle:Category")->findOneBy(array('slug' => 'web-development'));
         $crawler = $client->request('GET', $this->getUrl('admin_bundle_portfolio_category_edit', array('id' => $category->getId())));
 
@@ -154,7 +154,7 @@ class CategoryAdminTest extends WebTestCase
         $this->loadFixtures(array('Stfalcon\Bundle\PortfolioBundle\DataFixtures\ORM\LoadCategoryData'));
 
         $client = $this->makeClient(true);
-        $em = $this->getContainer()->get('doctrine')->getEntityManager();
+        $em = $this->getContainer()->get('doctrine')->getManager();
         $category = $em->getRepository("StfalconPortfolioBundle:Category")->findOneBy(array('slug' => 'web-development'));
 
         // delete category

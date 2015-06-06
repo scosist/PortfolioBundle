@@ -24,7 +24,7 @@ class BaseCategory
      * @var string $name
      *
      * @Assert\NotBlank()
-     * @Assert\MinLength(3)
+     * @Assert\Length(min=3, max=255)
      * @ORM\Column(name="name", type="string", length=255)
      */
     protected $name = '';
@@ -33,7 +33,7 @@ class BaseCategory
      * @var string $slug
      *
      * @Assert\NotBlank()
-     * @Assert\MinLength(3)
+     * @Assert\Length(min=3, max=128)
      * @ORM\Column(name="slug", type="string", length=128, unique=true)
      */
     protected $slug;
@@ -42,7 +42,7 @@ class BaseCategory
      * @var string $description
      *
      * @Assert\NotBlank()
-     * @Assert\MinLength(10)
+     * @Assert\Length(min=10)
      * @ORM\Column(name="description", type="text")
      */
     protected $description;
